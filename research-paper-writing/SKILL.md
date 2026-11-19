@@ -23,7 +23,7 @@ Use this skill to make a research paper easier to understand, verify, and review
 | Request | Mode | Primary output |
 |---|---|---|
 | Topic, notes, code, or results are not yet organized | `intake` | Research story card and missing-artifact list |
-| Need a paper architecture or section plan | `outline` | Section outline, figure plan, and claim�Cevidence matrix |
+| Need a paper architecture or section plan | `outline` | Section outline, figure plan, and claim-evidenceevidence matrix |
 | Need new prose | `draft` | Draft text with paragraph roles and evidence anchors |
 | Need to improve existing prose | `revise` | Revised text plus change rationale and fact changes |
 | Need to check a paper before submission | `audit` | Citation, claim, reproducibility, and venue audits |
@@ -47,7 +47,7 @@ If the proposed contribution or the evidence is unclear, produce the card and a 
 
 ### 2. Research story
 
-Build `problem �� gap �� insight �� method �� evidence �� boundary`.
+Build `problem -> gap -> insight -> method -> evidence -> boundary`.
 
 The story must answer three questions:
 
@@ -57,7 +57,7 @@ The story must answer three questions:
 
 Reduce the paper to one primary contribution and at most three supporting claims. Split claims that require different evidence.
 
-### 3. Claim�Cevidence matrix
+### 3. Claim-evidenceevidence matrix
 
 Before drafting Abstract or Introduction, create a matrix using `references/claim-evidence-matrix.md`. Each claim receives an evidence type, source anchor, status, and allowed wording. A claim without evidence is either downgraded to a hypothesis or moved to the open-issues list.
 
@@ -91,7 +91,7 @@ Return the requested text together with:
 1. Assumptions and missing artifacts
 2. A compact outline or paragraph-role map
 3. Revised or drafted content
-4. Claim�Cevidence matrix changes
+4. Claim-evidenceevidence matrix changes
 5. Unresolved risks and the smallest next action for each risk
 
 For `review` mode, report findings by severity: `blocking`, `major`, `minor`, or `polish`. Attach an evidence anchor or explain why an anchor is unavailable.
