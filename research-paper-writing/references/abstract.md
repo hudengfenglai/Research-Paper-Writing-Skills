@@ -1,6 +1,6 @@
 # Abstract writing guide
 
-The abstract is a compressed claim�Cevidence argument. Draft it after the story card and claim�Cevidence matrix exist.
+The abstract is a compressed claim-evidenceevidence argument. Draft it after the story card and claim-evidenceevidence matrix exist.
 
 ## Structure
 
