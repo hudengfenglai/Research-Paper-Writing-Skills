@@ -1,4 +1,4 @@
-# Claim�Cevidence matrix
+# Claim-evidenceevidence matrix
 
 Use one row per claim. Split a compound claim when different parts need different evidence.
 
