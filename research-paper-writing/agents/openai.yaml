@@ -1,4 +1,5 @@
 interface:
   display_name: "Research Paper Writing"
-  short_description: "Academic paper writing and section-level refinement"
-  default_prompt: "Use $research-paper-writing to improve my paper's structure, flow, and section writing quality."
+  short_description: "Evidence-grounded ML/CV/NLP paper drafting and review"
+  default_prompt: "Use $research-paper-writing to build or revise my paper with a claim-evidence matrix, verified citations, and a reviewer-style audit."
+
