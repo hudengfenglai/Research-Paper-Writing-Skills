@@ -1,35 +1,10 @@
-# Conclusion Writing Guide
+# Conclusion writing guide
 
-## Goal
+1. Restate the supported problem and core idea.
+2. Summarize the strongest evidence without introducing new results.
+3. State the practical or scientific implication at the scope supported by the experiments.
+4. Name the most important limitation or untested boundary.
+5. Give one concrete next direction that follows from that boundary.
 
-Close the paper with clear takeaways and credible limitations.
+Do not use the Conclusion to upgrade an association into a causal claim or a benchmark result into broad generalization.
 
-## Structure
-
-1. Restate solved problem and core technical idea.
-2. Summarize strongest evidence from experiments.
-3. State practical impact or new insight.
-4. Add limitation paragraph.
-5. End with concrete future direction.
-
-## Limitation Guidance
-
-Prefer limitations tied to task goal/setting boundaries, for example:
-
-1. Data regime limitation (e.g., only short sequences).
-2. Assumption limitation (e.g., controlled viewpoints only).
-3. Deployment scope limitation (e.g., specific sensor setup).
-
-Avoid framing conclusion around fixable implementation flaws unless they critically define your method's scope.
-
-## Distinguish Limitation Types
-
-1. Technical defect: underperforms strong baselines on key metrics or causes unacceptable tradeoff.
-2. Scope limitation: bounded by current task setting and still competitive vs. current SOTA.
-
-## Template
-
-1. This paper addresses [problem] by proposing [method].
-2. The key idea is [core insight], which enables [main benefit].
-3. Experiments show [main gains] across [datasets/settings].
-4. A current limitation is [scope boundary], and extending to [future setting] is an important next step.
