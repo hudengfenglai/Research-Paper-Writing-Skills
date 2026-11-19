@@ -1,99 +1,115 @@
 ---
 name: research-paper-writing
-description: Improve academic paper writing quality for ML/CV/NLP-style papers with clear section structure, paragraph flow, and reviewer-facing presentation. Use when drafting or revising Abstract, Introduction, Related Work, Method, Experiments, or Conclusion; polishing figures/tables; checking claim-support alignment; or performing self-review before submission.
+description: Evidence-grounded writing and review workflow for ML, CV, NLP, and adjacent research papers. Use when turning research artifacts into a paper story, drafting or revising Abstract, Introduction, Related Work, Method, Experiments, or Conclusion, auditing citations and claims, planning missing experiments, or preparing a venue submission.
+version: 2.0.0
+license: MIT
 ---
+
 # Research Paper Writing
 
-## Overview
+Use this skill to make a research paper easier to understand, verify, and review. It is adapted from Prof. Peng Sida's public research-writing notes and supplemented with evidence-first practices from established open research-skill projects.
 
-Use this skill to rewrite a research paper into a reviewer-friendly, high-clarity draft.
-Prioritize first-impression quality (figures/tables/layout), logical flow, and evidence-backed claims.
+## Non-negotiable rules
 
-## Core Workflow
+1. **Evidence before prose.** Inspect the supplied paper, code, tables, figures, logs, and citations before making a factual claim.
+2. **Keep the truth boundary visible.** Mark statements as `VERIFIED`, `INFERRED`, `DRAFT`, or `MISSING`. Never turn an inference into a result or a hypothesis into a conclusion.
+3. **Never invent citations, numbers, experiments, reviewer feedback, or implementation details.** If a citation cannot be verified, use `[CITATION NEEDED]` and record what must be checked.
+4. **Explain genuine novelty precisely.** Do not inflate a simple pipeline, hide a baseline component, or replace a weak result with stronger wording.
+5. **Make claims falsifiable.** Every major claim must map to a result, a method derivation, a citation, or an explicitly stated limitation.
+6. **Preserve user facts and notation.** Ask only when a missing decision would change the paper's scientific meaning. Otherwise state the assumption and continue.
 
-1. Clarify the paper story before sentence-level edits.
-2. Use section-specific guidance in `references/`.
-3. Rewrite paragraph-by-paragraph with one message per paragraph.
-4. Run reverse outlining after writing each section.
-5. Check every major claim in Abstract/Introduction against experimental evidence.
-6. Run final-paper adversarial review with `references/paper-review.md`.
+## Route the request
 
-## Global Principles
+| Request | Mode | Primary output |
+|---|---|---|
+| Topic, notes, code, or results are not yet organized | `intake` | Research story card and missing-artifact list |
+| Need a paper architecture or section plan | `outline` | Section outline, figure plan, and claim�Cevidence matrix |
+| Need new prose | `draft` | Draft text with paragraph roles and evidence anchors |
+| Need to improve existing prose | `revise` | Revised text plus change rationale and fact changes |
+| Need to check a paper before submission | `audit` | Citation, claim, reproducibility, and venue audits |
+| Need a skeptical assessment | `review` | Prioritized findings, evidence anchors, and minimum fixes |
 
-1. Keep one paragraph for one message only.
-2. State the paragraph message in the first sentence.
-3. Make nouns self-contained; define new terms before reusing them.
-4. Maintain sentence-to-sentence flow (cause, contrast, consequence, or refinement).
-5. Iterate with adversarial self-review: read as a skeptical reviewer.
-6. Treat visual quality as core content, not decoration.
-7. Use a clean teaser and pipeline figure.
-8. Use readable, minimal-ink tables.
-9. Keep formatting consistent and tidy.
+If the request does not specify a mode, infer one from the task and state it in the first line of the response.
 
-## Paragraph Clarity Check (Important)
+## Workflow and gates
 
-Use this quick test whenever the user asks whether a paragraph "flows" or is clear.
+### 1. Intake
 
-1. Read as an external reader:
-   - Does this paragraph have one explicit message?
-   - Does the first sentence state what this paragraph will do?
-   - Are all key nouns/terms readable without hidden context?
-   - Does each sentence connect to the previous one with a clear relation (cause, contrast, consequence, refinement, example)?
-2. Run reverse outlining for the current section:
-   - Write down thesis/main claim.
-   - Write down each paragraph topic sentence.
-   - Write down the evidence/explanation points under each paragraph.
-   - Check mapping: topic sentence -> thesis, and evidence -> topic sentence.
-   - Revise or remove any paragraph that cannot be mapped cleanly.
-3. If flow is still weak, add temporary section headers and explicit transition phrases during revision, then remove unnecessary headers before finalizing.
+Create a compact intake card before drafting:
 
-Source reference for this check:
+- Task, audience, target venue, and format constraints
+- Available artifacts and their paths
+- Proposed contribution in one sentence
+- Known results, baselines, metrics, and limitations
+- Output requested in this turn
 
-- `references/does-my-writing-flow-source.md`
+If the proposed contribution or the evidence is unclear, produce the card and a focused missing-information list before writing persuasive prose.
 
-## Section Guides
+### 2. Research story
 
-Load only the needed section file:
+Build `problem �� gap �� insight �� method �� evidence �� boundary`.
 
-- Introduction: `references/introduction.md`
-- Abstract: `references/abstract.md`
-- Related Work: `references/related-work.md`
-- Method: `references/method.md`
-- Experiments: `references/experiments.md`
-- Conclusion: `references/conclusion.md`
-- Paper review (Paper Review): `references/paper-review.md`
-- Paragraph clarity source: `references/does-my-writing-flow-source.md`
-- Example bank index: `references/examples/index.md`
+The story must answer three questions:
 
-## Paper Review Core Points
+- **What:** What new result, method, analysis, or understanding is contributed?
+- **Why:** Which evidence distinguishes the claim from plausible alternatives?
+- **So what:** Why does the result matter to the intended research community?
 
-Use `references/paper-review.md` for the full checklist and workflow.
+Reduce the paper to one primary contribution and at most three supporting claims. Split claims that require different evidence.
 
-1. Add an end-of-draft self-review question list in five dimensions:
-   - contribution,
-   - writing clarity,
-   - experimental strength,
-   - evaluation completeness,
-   - method design soundness.
-2. Treat claim-evidence alignment as a hard constraint, especially for Abstract and Introduction.
-3. Perform adversarial writing: review as a skeptical reviewer and resolve every high-risk question.
-4. Revise until major rejection risks are explicitly addressed.
+### 3. Claim�Cevidence matrix
 
-## Execution Rules
+Before drafting Abstract or Introduction, create a matrix using `references/claim-evidence-matrix.md`. Each claim receives an evidence type, source anchor, status, and allowed wording. A claim without evidence is either downgraded to a hypothesis or moved to the open-issues list.
 
-1. Build a mini-outline before drafting prose.
-2. For each subsection, explicitly include motivation, design, and technical advantage when applicable.
-3. Avoid writing style that looks like incremental patching of a naive baseline.
-4. Keep terminology stable across the full paper.
-5. If a claim cannot be supported by results, weaken or remove the claim.
-6. Before finalizing, append and answer a five-dimension self-review question list, then revise the paper based on unresolved items.
-7. Do not load all section references (Introduction/Abstract/Related Work/Method/Experiments/Conclusion) at once; load only the specific section guide needed for the current edit target.
+### 4. Section drafting
 
-## Output Contract
+Load only the relevant guide from `references/`:
 
-When asked to rewrite or draft sections, return:
+- `abstract.md`
+- `introduction.md`
+- `related-work.md`
+- `method.md`
+- `experiments.md`
+- `conclusion.md`
 
-1. A compact section outline (3-7 bullets).
-2. Revised paragraphs with explicit paragraph roles (opening/challenge/method/advantage/evidence/limitation).
-3. A short self-review checklist covering clarity, flow, terminology consistency, unsupported claims, and missing evidence.
-4. A claim-evidence map for each major claim in the revised text using `Claim: ... | Evidence: ... | Status: supported/needs evidence`.
+Draft from the matrix, then run reverse outlining. Each paragraph needs one job, a clear topic sentence, and a visible relation to the paragraph before it.
+
+### 5. Verification passes
+
+Run the following passes in order:
+
+1. **Fact pass:** numbers, settings, dataset names, baselines, and citations match the supplied artifacts.
+2. **Claim pass:** Abstract and Introduction contain no claim stronger than the matrix allows.
+3. **Reproduction pass:** another researcher could identify data, code, configuration, seeds, metrics, and evaluation protocol.
+4. **Reader pass:** terms are defined, notation is stable, and figures/tables can be interpreted from their captions.
+5. **Reviewer pass:** use `references/reviewer-checklist.md` and `references/paper-review.md`.
+
+### 6. Output
+
+Return the requested text together with:
+
+1. Assumptions and missing artifacts
+2. A compact outline or paragraph-role map
+3. Revised or drafted content
+4. Claim�Cevidence matrix changes
+5. Unresolved risks and the smallest next action for each risk
+
+For `review` mode, report findings by severity: `blocking`, `major`, `minor`, or `polish`. Attach an evidence anchor or explain why an anchor is unavailable.
+
+## Section routing notes
+
+- **Abstract:** task, concrete challenge, contribution or insight, evidence, and boundary. Include a number only when its source and comparison are verified.
+- **Introduction:** lead readers from the problem to the exact gap and then to the tested solution. Describe the actual mechanism and the reason it addresses the gap.
+- **Related Work:** group by technical idea or assumption. Compare mechanisms and limitations rather than listing papers one by one.
+- **Method:** for every module, state motivation, input/output, forward process, assumptions, and technical consequence. Separate final design from ablations.
+- **Experiments:** introduce each experiment with the claim it tests, the protocol, the expected signal, the result, and the interpretation. Report uncertainty and failure cases when relevant.
+- **Conclusion:** restate the supported contribution, strongest evidence, scope boundary, and a concrete next direction.
+
+## Citation and source discipline
+
+Use `references/citation-integrity.md` whenever adding or changing citations. Search first, verify bibliographic identity, inspect the source for the attributed claim, and keep a citation ledger. Do not use a search snippet as evidence for a technical statement.
+
+## Revision discipline
+
+When revising existing text, preserve all scientific facts unless the user requests a factual change. Distinguish wording edits from changes to claims, numbers, scope, or interpretation. Flag every factual change explicitly.
+
