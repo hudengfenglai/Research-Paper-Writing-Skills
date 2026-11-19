@@ -11,7 +11,7 @@ Related Work positions the paper so that a reviewer can verify the gap and the d
 
 ## Paragraph pattern
 
-`topic scope �� representative mechanisms �� limitation relevant to this paper �� technical distinction`
+`topic scope -> representative mechanisms -> limitation relevant to this paper -> technical distinction`
 
 Prefer a small set of representative, verifiable citations over a long citation dump. Cite the strongest relevant work even when it makes the paper's improvement smaller. Keep historical context, current-paper claims, and speculation in separate sentences.
 
