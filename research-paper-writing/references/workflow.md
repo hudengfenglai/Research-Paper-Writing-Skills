@@ -19,23 +19,23 @@ Open decisions:
 
 ## Gates
 
-### Gate A �� scope
+### Gate A -> scope
 
 Pass when the task, audience, output format, and available artifacts are explicit. If a missing item could change the scientific interpretation, stop and ask one focused question.
 
-### Gate B �� story
+### Gate B -> story
 
-Pass when `problem �� gap �� insight �� method �� evidence �� boundary` can be written without placeholders except those explicitly marked `MISSING`.
+Pass when `problem -> gap -> insight -> method -> evidence -> boundary` can be written without placeholders except those explicitly marked `MISSING`.
 
-### Gate C �� claims
+### Gate C -> claims
 
-Pass when every major claim has an evidence type, source anchor, status, and allowed wording in the claim�Cevidence matrix.
+Pass when every major claim has an evidence type, source anchor, status, and allowed wording in the claim-evidenceevidence matrix.
 
-### Gate D �� draft
+### Gate D -> draft
 
 Pass when every paragraph has one role and every section transition is justified by the story.
 
-### Gate E �� audit
+### Gate E -> audit
 
 Pass when citation identity, claim strength, reproducibility details, and venue constraints have been checked. Unresolved items remain visible in the output.
 
