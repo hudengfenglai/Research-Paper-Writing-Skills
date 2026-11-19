@@ -5,7 +5,7 @@ An evidence-grounded paper-writing skill for ML, CV, NLP, and adjacent research.
 ## What changed in v2
 
 - Adds explicit `intake`, `outline`, `draft`, `revise`, `audit`, and `review` modes.
-- Requires a research story and claim�Cevidence matrix before persuasive drafting.
+- Requires a research story and claim-evidenceevidence matrix before persuasive drafting.
 - Adds citation-integrity, reproducibility, venue-adaptation, and reviewer-checklist references.
 - Replaces novelty-inflation advice with evidence-bound contribution writing.
 - Adds a local validator for required files and internal reference links.
